@@ -1,0 +1,15 @@
+{
+  "name": "jest-no-deps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.3.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}

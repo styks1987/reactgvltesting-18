@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleSwitch /> renders with props on 1`] = `
+<div
+  style={
+    Object {
+      "background": "green",
+      "color": "white",
+      "fontSize": "30px",
+      "fontWeight": "bold",
+      "padding": "50px",
+    }
+  }
+>
+  I AM ON
+   
+  <button
+    className="btn-toggle"
+    onClick={[Function]}
+  >
+    Turn Me OFF
+  </button>
+</div>
+`;

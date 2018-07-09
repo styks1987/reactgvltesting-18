@@ -1,0 +1,38 @@
+{
+  "name": "jest-no-deps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
+    "@babel/plugin-transform-classes": "^7.0.0-beta.44",
+    "@babel/plugin-transform-spread": "^7.0.0-beta.44",
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.2.0",
+    "babel-loader": "^8.0.0-beta.2",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.3.0",
+    "jest-babel": "^1.0.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1",
+    "webpack": "4.x",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "3.x"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC"
+}

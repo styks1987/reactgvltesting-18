@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default player specs 1`] = `
+Object {
+  "isLost": undefined,
+  "name": undefined,
+  "superhuman": undefined,
+}
+`;
+
+exports[`test setting is lost 1`] = `
+Object {
+  "isLost": true,
+  "name": undefined,
+  "superhuman": true,
+}
+`;
+
+exports[`test setting name 1`] = `
+Object {
+  "isLost": true,
+  "name": "Tom",
+  "superhuman": true,
+}
+`;
+
+exports[`test setting super human 1`] = `
+Object {
+  "isLost": undefined,
+  "name": undefined,
+  "superhuman": true,
+}
+`;
