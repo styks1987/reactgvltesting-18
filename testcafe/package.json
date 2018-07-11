@@ -1,5 +1,5 @@
 {
-  "name": "testcafe",
+  "name": "testcafe-examples",
   "version": "1.0.0",
   "description": "",
   "main": "sum.js",
@@ -31,13 +31,16 @@
     "react-test-renderer": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "testcafe": "^0.20.4",
     "webpack": "4.x",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "3.x"
   },
   "scripts": {
     "start": "webpack-dev-server --output-public-path=/dist/",
-    "test" : "jest"
+    "test": "jest",
+    "test:ui": "testcafe chrome tests/src/*",
+    "test:ui:headless": "testcafe \"chrome:headless\" tests/src/*"
   },
   "author": "",
   "license": "ISC"

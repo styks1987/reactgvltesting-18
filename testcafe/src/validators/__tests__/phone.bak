@@ -1,0 +1,10 @@
+/** @format */
+
+import phone from '../phone';
+
+test('test email matching', () => {
+    expect(phone('12312332asdfasdf')).toBe(true);
+    expect(phone('12123-123123123')).toBe(true);
+    expect(phone('123-123-1233')).toBe(true);
+    expect(phone('1231231233')).toBe(false);
+});

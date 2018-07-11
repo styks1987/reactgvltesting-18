@@ -5,45 +5,53 @@ import withFormHandler from './with_form_handler';
 import {validateEmail, validateEmpty} from './validators';
 import withFormValidator from './with_form_validator';
 
+const InputWithErrorHandler = props => {
+    return (
+        <React.Fragment>
+            {props.fieldHasError(props.field) && (
+                <div className={'alert alert-danger alert-' + props.field}>
+                    {props.getErrorMessage(props.field).join(' and ')}
+                </div>
+            )}
+            <div>
+                <input
+                    className="form-control"
+                    type="text"
+                    name={props.field}
+                    value={props.value || ''}
+                    onChange={props.onChange.bind(this, props.field)}
+                />
+            </div>
+        </React.Fragment>
+    );
+};
+
 const ComplexForm = withFormValidator(
     withFormHandler(props => {
         return (
-            <div className="card p-4">
+            <div className="card p-4 complex-form">
                 <div className="form-group">
                     <label>Name</label>
-                    {props.fieldHasError('name') && (
-                        <div className="alert alert-danger">
-                            {props.getErrorMessage('name').join(' and ')}
-                        </div>
-                    )}
-                    <div>
-                        <input
-                            className="form-control"
-                            type="text"
-                            value={props.name || ''}
-                            onChange={props.onChange.bind(this, 'name')}
-                        />
-                    </div>
+                    <InputWithErrorHandler
+                        field={'name'}
+                        value={props.name}
+                        fieldHasError={props.fieldHasError}
+                        getErrorMessage={props.getErrorMessage}
+                        onChange={props.onChange}
+                    />
                 </div>
                 <div className="form-group">
                     <label>Email</label>
-                    {props.fieldHasError('email') && (
-                        <div className="alert alert-danger">
-                            {props.getErrorMessage('email').join(' and ')}
-                        </div>
-                    )}
-                    <div>
-                        <input
-                            className="form-control"
-                            type="text"
-                            value={props.email || ''}
-                            onChange={props.onChange.bind(this, 'email')}
-                        />
-                    </div>
+                    <InputWithErrorHandler
+                        field={'email'}
+                        value={props.email}
+                        fieldHasError={props.fieldHasError}
+                        getErrorMessage={props.getErrorMessage}
+                        onChange={props.onChange}
+                    />
                 </div>
-
                 <div>
-                    <button className="btn btn-success" onClick={props.onValidate}>
+                    <button className="btn btn-success validate-form" onClick={props.onValidate}>
                         Validate
                     </button>
                 </div>
