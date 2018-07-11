@@ -45,6 +45,8 @@ test('Test Complex Form Validates', async t => {
         .typeText(emailInput, 'invalidemail')
         .click(validateFormButton);
 
+    // debugger;
+
     await t.expect(emailError.innerText).eql('Your email is invalid');
 
     await t

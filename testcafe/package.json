@@ -40,7 +40,8 @@
     "start": "webpack-dev-server --output-public-path=/dist/",
     "test": "jest",
     "test:ui": "testcafe chrome tests/src/*",
-    "test:ui:headless": "testcafe \"chrome:headless\" tests/src/*"
+    "test:ui:headless": "testcafe \"chrome:headless\" tests/src/*",
+    "test:ui:debug": "testcafe --inspect-brk chrome tests/src/*"
   },
   "author": "",
   "license": "ISC"
