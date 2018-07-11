@@ -3,11 +3,4 @@
 
 Explain
 
-* Show Main
-* Show Toggle Switch
-* Show Test
-* `npm run test`
-
-Remove onClick from turn me off to demonstrate what we are NOT testing
-
-* `webpack && npm run start`
+Refactor with_form_validator to use a separate reducer function

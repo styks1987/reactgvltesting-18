@@ -1,5 +1,6 @@
 /** @format */
 
 import validateEmail from './email';
+import validateEmpty from './empty';
 
-export {validateEmail};
+export {validateEmail, validateEmpty};

@@ -2,17 +2,13 @@
 
 import React from 'react';
 import update from 'immutability-helper';
-import withFormValidator from './with_form_validator';
-import {validateEmail} from './validators';
 
 const withFormHandler = ComponentContainer => {
     class WithFormHandler extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                formData: {
-                    email: ''
-                }
+                formData: props.formData
             };
         }
 
@@ -24,19 +20,7 @@ const withFormHandler = ComponentContainer => {
         };
 
         handleValidate = () => {
-            const validators = [
-                {
-                    field: 'email',
-                    rules: [
-                        {
-                            rule: validateEmail,
-                            message: 'Your email is invalid'
-                        }
-                    ]
-                }
-            ];
-
-            props.onValidateRules(validators, this.state.formData);
+            this.props.onValidateRules(this.props.validators, this.state.formData);
         };
 
         render() {
@@ -45,14 +29,13 @@ const withFormHandler = ComponentContainer => {
                     onValidate={this.handleValidate}
                     onChange={this.handleChange}
                     valid={this.state.valid}
-                    errors={this.props.errors}
-                    hasErrors={this.props.hasErrors}
+                    {...this.props}
                     {...this.state.formData}
                 />
             );
         }
     }
-    return withFormValidator(WithFormHandler);
+    return WithFormHandler;
 };
 
 export default withFormHandler;

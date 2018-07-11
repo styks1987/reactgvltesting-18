@@ -54,12 +54,23 @@ export default ComponentContainer => {
             return fields.indexOf(field) > -1;
         };
 
+        getErrorMessage = field => {
+            const fieldError = this.state.errors.find(error => error.field == field);
+
+            if (typeof fieldError != 'undefined') {
+                return fieldError.messages;
+            }
+
+            return [];
+        };
+
         render() {
             return (
                 <ComponentContainer
                     {...this.props}
                     errors={this.state.errors}
                     fieldHasError={this.fieldHasError}
+                    getErrorMessage={this.getErrorMessage}
                     hasErrors={this.state.errors.length > 0}
                     onValidateRules={this.handleValidateRules}
                 />

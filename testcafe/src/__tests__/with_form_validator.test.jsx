@@ -34,6 +34,44 @@ test('withFormValidator fieldHasError', () => {
     expect(component.instance().fieldHasError('email')).toBe(false);
 });
 
+test('withFormValidator handleValidateRule', () => {
+    const TestChild = () => <div>Test</div>;
+
+    const Validator = withFormValidator(TestChild);
+
+    const component = shallow(<Validator />);
+
+    expect(component.instance().handleValidateRule('invalidmethod')).toBe(false);
+    expect(
+        component.instance().handleValidateRule(value => {
+            return value + 1;
+        }, 3)
+    ).toBe(4);
+});
+
+test('withFormValidator validateField', () => {
+    const TestChild = () => <div>Test</div>;
+
+    const Validator = withFormValidator(TestChild);
+
+    const component = shallow(<Validator />);
+
+    const testValue = 5;
+    const passingRule = {
+        rule: value => value == testValue
+    };
+    const failingRule = {
+        rule: value => value == 45
+    };
+
+    const rules = [passingRule, failingRule];
+    const fieldValidator = {
+        rules: rules
+    };
+    expect(component.instance().validateField(fieldValidator, testValue)).toEqual([passingRule]);
+    expect(component.instance().validateField(fieldValidator, 3)).toBe(false);
+});
+
 // Test that Field has error works properly
 test('withFormValidator', () => {
     const TestChild = props => {
