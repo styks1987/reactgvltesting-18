@@ -69,6 +69,5 @@ module.exports = {
             radium: 'lodash/identity'
         }
     },
-    mode: 'development',
-    watch: true
+    mode: 'development'
 };

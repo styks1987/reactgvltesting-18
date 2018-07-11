@@ -19,4 +19,5 @@ test('test setting is lost', () => {
 test('test setting name', () => {
     player.setName('Tom');
     expect(player.getHuman()).toMatchSnapshot();
+    expect(player.getHuman().name).toBe('Tom');
 });
