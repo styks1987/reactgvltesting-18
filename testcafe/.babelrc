@@ -1,0 +1,19 @@
+/** @format */
+
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["IE >= 11"]
+        },
+        "useBuiltIns": "usage",
+//        "debug": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes"],
+    "ignore": ["/node_modules/*", "/dist/*"]
+}
